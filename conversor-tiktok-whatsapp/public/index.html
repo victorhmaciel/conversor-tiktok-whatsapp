@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101410">
+  <meta name="description" content="Converta figurinhas do TikTok em WebP ou GIF, preservando a animação.">
+  <title>Conversor de Figurinhas · TikTok para WhatsApp</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">TikTok <span aria-hidden="true">→</span> WhatsApp</p>
+      <h1>Conversor de<br class="title-break"> figurinhas<span>.</span></h1>
+      <p class="subtitle">Converta uma figurinha em WebP ou GIF com a animação preservada.</p>
+    </header>
+
+    <section class="card" aria-label="Conversão">
+      <form id="converter">
+        <fieldset class="source-options">
+          <legend>Origem da figurinha</legend>
+          <label><input type="radio" name="source" value="link" checked><span>Link do TikTok</span></label>
+          <label><input type="radio" name="source" value="file"><span>Enviar arquivo</span></label>
+        </fieldset>
+        <div id="link-fields" class="field">
+          <label for="link">Endereço direto da imagem</label>
+          <input id="link" type="url" placeholder="https://…" autocomplete="off" spellcheck="false" aria-describedby="link-hint" required>
+          <p id="link-hint" class="hint">Links de páginas ou comentários do TikTok precisam ser substituídos pelo endereço da imagem ou pelo arquivo.</p>
+        </div>
+        <div id="file-fields" class="field" hidden>
+          <label for="file">Arquivo da figurinha</label>
+          <input id="file" type="file" accept=".webp,.awebp,.gif,.png,.jpg,.jpeg,image/webp,image/gif,image/png,image/jpeg" aria-describedby="file-hint" disabled>
+          <p id="file-hint" class="hint">WebP, AWEBP, GIF, PNG ou JPG de até 4 MB.</p>
+        </div>
+        <div class="convert-actions">
+          <button type="submit" value="webp" class="primary">Converter para WebP</button>
+          <button type="submit" value="gif">Converter para GIF</button>
+        </div>
+      </form>
+      <p id="status" class="status" role="status" aria-live="polite" hidden></p>
+    </section>
+
+    <section id="result" class="card result" aria-labelledby="result-title" hidden>
+      <div class="preview"><img id="preview" alt="Prévia da figurinha convertida"></div>
+      <div>
+        <h2 id="result-title">Figurinha pronta</h2>
+        <p id="details" class="hint"></p>
+        <div class="result-actions">
+          <a id="download" class="button primary" download>Baixar</a>
+          <button id="share" type="button" hidden>Compartilhar</button>
+        </div>
+        <p class="hint">No iPhone, use Compartilhar para abrir a opção Salvar em Arquivos.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

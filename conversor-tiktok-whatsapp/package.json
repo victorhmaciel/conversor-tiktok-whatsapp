@@ -1,0 +1,9 @@
+{
+  "name": "conversor-tiktok-whatsapp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": { "start": "node scripts/dev.mjs" },
+  "dependencies": { "sharp": "0.35.5" }
+}
